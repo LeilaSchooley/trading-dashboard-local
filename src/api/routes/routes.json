@@ -1,0 +1,11 @@
+{
+    "api": {
+        "v3": {
+            "historical-chart": {
+                "minute": "/api/v3/historical-chart/",
+                "hour": "/api/v3/historical-chart/",
+                "daily": "/api/v3/historical-chart/historical-price-full/"
+            }
+        }
+    }
+}
