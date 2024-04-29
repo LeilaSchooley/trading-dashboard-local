@@ -1,65 +1,70 @@
-# home-trading-system
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-### Prerequisites
+In the project directory, you can run:
 
-To run the project you will need to have the following installed:
+### `npm start`
 
-* Net Framework 7 (https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-* Node v16.20.0 or higher (https://nodejs.org/en/blog/release/v16.20.0)
-* Visual Studio Code IDE (Yes not your own!)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Setup
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-First, `cd client`
+### `npm test`
 
-Then run commands `npm install` `npm run-script build`
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Go back to the main directory `cd ..`
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-To run the this application mate, there are two ways of doing so.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-#### Running the front-end only
+### `npm run eject`
 
-To run the front end only, make sure the prerequisites are installed.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-It is recommend mate, that you run the full application instead of the front end only.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Go to `cd client`, then run `npm run-script start`
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-#### Running tests
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-To run tests, run `npm run-script jest`
+## Learn More
 
-To create and run test files, it must reside in the test folder `cd client/src/main/test`
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-All unit tests in react use jest, some libraries however are not compatible with jest and 
-should be ignored by setting `transformIgnorePatterns` in `package.json`
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### Run the full application (front-end and back-end)
+### Code Splitting
 
-##### Use the debugger
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Navigate to run and debug, hit `start debugging`
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
-#### Changing ports
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-If the ports set in this application conflict with any ports running locally on your machine, 
-it is possible to change them.
+### Advanced Configuration
 
-Open `Program.cs` and change the port numbers on `WebHostBuilder().UseUrls`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Open `client/package.json` and change the proxy to the corrosponding port number
+### Deployment
 
-Run `npm run-script build`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Go back to the main directory `cd ..`
+### `npm run build` fails to minify
 
-Run `dotnet clean StockScreener.csproj` and `dotnet build StockScreener.csproj`
-
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
