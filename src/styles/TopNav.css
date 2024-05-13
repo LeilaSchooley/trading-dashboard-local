@@ -1,0 +1,20 @@
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav button,
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+nav button:hover,
+nav a:hover {
+  background-color: #555;
+}

@@ -1,0 +1,15 @@
+
+
+.base-template {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 20px;
+  padding: 20px;
+  height: 100vh; /* Full height of the viewport */
+}
+
+@media (max-width: 768px) {
+  .base-template {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+}
