@@ -18,3 +18,9 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
+.orders-pane {
+  background-color: #e0e0e0;
+  padding: 20px;
+  height: 150px; /* Adjust based on your needs */
+}

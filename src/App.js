@@ -4,6 +4,7 @@ import BaseTemplate from "./components/BaseTemplate";
 import OrdersPanel from "./components/OrdersPanel";
 import SecuritiesMenu from "./components/SecuritiesMenu";
 import TopNav from "./components/TopNav";
+import "./styles/GlobalStyles.css"; // Import at the top
 
 function App() {
   return (

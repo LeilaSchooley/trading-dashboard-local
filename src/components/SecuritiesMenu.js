@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React from "react";
+import "../styles/SecuritiesMenu.css";
 
 function SecuritiesMenu() {
-    const [security, setSecurity] = useState('');
+  const handleClick = (stock) => {
+    console.log("Selected:", stock);
+    // You can handle navigation or display changes here
+  };
 
-    return (
-        <div>
-            <select value={security} onChange={(e) => setSecurity(e.target.value)}>
-                <option value="stock1">Stock 1</option>
-                <option value="stock2">Stock 2</option>
-                {/* Add more options as needed */}
-            </select>
-        </div>
-    );
+  return (
+    <div className="securities-menu">
+      <ul>
+        <li onClick={() => handleClick("AAPL")}>Apple Inc. (AAPL)</li>
+        <li onClick={() => handleClick("MSFT")}>Microsoft Corp. (MSFT)</li>
+        <li onClick={() => handleClick("AMZN")}>Amazon.com Inc. (AMZN)</li>
+        {/* Add more stocks with onClick handlers as needed */}
+      </ul>
+    </div>
+  );
 }
 
 export default SecuritiesMenu;

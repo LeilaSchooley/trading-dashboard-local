@@ -1,10 +1,34 @@
-select {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.securities-menu {
+  width: 20%; /* Adjust width as per your design requirement */
+  background-color: #f4f4f4;
+  padding: 20px;
+  height: 100vh; /* Full height of the viewport */
+  overflow-y: auto; /* Allows scrolling */
 }
 
-select:focus {
-  outline: none;
-  border-color: blue;
+.securities-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.securities-menu li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.securities-menu li:hover {
+  background-color: #ddd; /* Highlight on hover */
+}
+.securities-menu li {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.securities-menu {
+  width: 25%; /* Change to a quarter of the screen */
+  background-color: #f4f4f4;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
 }
