@@ -1,13 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import "../styles/TopNav.css";
 
 function TopNav() {
   return (
     <nav>
       <button>Display Stock</button>
-      <NavLink to="/orders">Orders</NavLink>
-      <NavLink to="/strategies">Strategies</NavLink>
+      <Link href="/orders">Orders</Link>
+      <Link href="/strategies">Strategies</Link>
       {/* Add more links as needed */}
     </nav>
   );

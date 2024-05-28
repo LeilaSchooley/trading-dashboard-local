@@ -1,9 +1,9 @@
 .securities-menu {
-  width: 20%; /* Adjust width as per your design requirement */
+  width: 100%; /* Adjust width as per your design requirement */
   background-color: #f4f4f4;
   padding: 20px;
-  height: 100vh; /* Full height of the viewport */
-  overflow-y: auto; /* Allows scrolling */
+  height: 100%; /* Full height of the viewport */
+  overflow-y: auto; /* Allows scrolling */ 
 }
 
 .securities-menu ul {
@@ -25,10 +25,4 @@
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }
-.securities-menu {
-  width: 25%; /* Change to a quarter of the screen */
-  background-color: #f4f4f4;
-  padding: 20px;
-  height: 100vh;
-  overflow-y: auto;
-}
+
