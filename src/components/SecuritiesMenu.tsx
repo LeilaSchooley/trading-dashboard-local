@@ -2,10 +2,9 @@
 import React from "react";
 import "../styles/SecuritiesMenu.css";
 
-function SecuritiesMenu() {
+function SecuritiesMenu({symbol,setter}) {
   const handleClick = (stock:any) => {
-    console.log("Selected:", stock);
-    // You can handle navigation or display changes here
+      setter(stock);
   };
 
   return (

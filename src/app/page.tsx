@@ -12,13 +12,15 @@ export default function Home() {
   const pushOrder = (order:any)=>{
     setPendingOrders([...pendingOrders,{...order,symbol,date:Date.now()}])
   }
-
+  const selectSymbol = (symbol:string)=>{
+    setSymbol(symbol)
+  }
   return (
       <main className=" h-screen">
-        <TopNav price={100} stock={"APPL"}/>
+        <TopNav price={100} stock={symbol}/>
         <div className=" grid lg:grid-cols-12 gap-2 w-full lg:grid-rows-2 h-100">
           <div className="col-span-2 row-span-2 ">
-              <SecuritiesMenu />
+              <SecuritiesMenu symbol={symbol} setter={selectSymbol}  />
           </div>
           <div className="col-span-7 row-span-2  overflow-scroll">
             <Candlestick/>  
