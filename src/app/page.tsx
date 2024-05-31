@@ -5,6 +5,7 @@ import OrdersPanel from "@/components/OrdersPanel";
 import  OrderBook  from "@/components/OrderBook";
 import Candlestick from "@/components/charts/Candlestick";
 import FillsPane from "@/components/FillsPane"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useState,useEffect } from "react";
 export default function Home() {
   const [pendingOrders,setPendingOrders] = useState([])
@@ -16,9 +17,16 @@ export default function Home() {
     setSymbol(symbol)
   }
   return (
-      <main className=" h-screen">
-        <TopNav price={100} stock={symbol}/>
-        <div className=" grid lg:grid-cols-12 gap-2 w-full lg:grid-rows-2 h-100">
+    <Tabs defaultValue="home">
+      <TabsList className="w-full justify-start">
+        <div className="p-2">{symbol}</div>
+        <TabsTrigger value="home">Pricing</TabsTrigger>
+        <TabsTrigger value="markets">Markets</TabsTrigger>
+        <TabsTrigger value="contact">Contact</TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="home">
+      <div className=" grid lg:grid-cols-12 gap-2 w-full lg:grid-rows-2 h-100">
           <div className="col-span-2 row-span-2 ">
               <SecuritiesMenu symbol={symbol} setter={selectSymbol}  />
           </div>
@@ -32,6 +40,7 @@ export default function Home() {
 
           </div>
         </div>
-      </main>
+      </TabsContent>
+    </Tabs>
   );
 }

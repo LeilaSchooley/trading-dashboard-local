@@ -10,10 +10,9 @@ function SecuritiesMenu({symbol,setter}) {
   return (
     <div className="securities-menu">
       <ul>
-        <li onClick={() => handleClick("AAPL")}>Apple Inc. (AAPL)</li>
-        <li onClick={() => handleClick("MSFT")}>Microsoft Corp. (MSFT)</li>
-        <li onClick={() => handleClick("AMZN")}>Amazon.com Inc. (AMZN)</li>
-        {/* Add more stocks with onClick handlers as needed */}
+        <li className={symbol == "AAPL"?'selected':''} onClick={() => handleClick("AAPL")}>Apple Inc. (AAPL)</li>
+        <li className={symbol == "MSFT"?'selected':''} onClick={() => handleClick("MSFT")}>Microsoft Corp. (MSFT)</li>
+        <li className={symbol == "AMZN"?'selected':''} onClick={() => handleClick("AMZN")}>Amazon.com Inc. (AMZN)</li>
       </ul>
     </div>
   );

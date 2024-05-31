@@ -3,7 +3,7 @@ import '@/styles/Orderbook.css';
 
 const FillsPane = ({ pendingOrders }) => {
   return (
-    <div className="mx-auto h-56 relative max-h-56 overflow-scroll .table-container">
+    <div className="mx-auto relative  overflow-scroll table-container">
       <table className="min-w-full bg-gray-500">
         <thead className='sticky top-0 z-10 bg-gray-500'>
           <tr className="border-b border-gray-600">

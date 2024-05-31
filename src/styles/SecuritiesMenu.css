@@ -11,6 +11,9 @@
   font-size: small;
   margin: 0;
 }
+.selected{
+  background-color: gray;
+}
 
 .securities-menu li {
   padding: 10px;
