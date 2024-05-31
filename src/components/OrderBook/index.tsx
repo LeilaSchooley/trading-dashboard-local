@@ -1,53 +1,52 @@
-"use client"
-import { Flex, Text, Icon, Box } from '@chakra-ui/react';
+import React, { useState, useEffect } from 'react';
+import { faker } from '@faker-js/faker';
+import '@/styles/Orderbook.css';
 
-import { RiArrowUpLine, RiArrowDownLine } from 'react-icons/ri';
-import { OrderLine } from './OrderLine';
 
-export function OrderBook() {
+const generateOrders = (type, count) => {
+  return Array.from({ length: count }, () => ({
+    id: faker.datatype.uuid(),
+    date: faker.date.recent(),
+    price: faker.finance.amount(50, 150, 2),
+    amount: faker.finance.amount(1, 100, 2),
+    total: function() { return (parseFloat(this.price) * parseFloat(this.amount)).toFixed(2); },
+    type,
+  }));
+};
+
+const OrderBook = () => {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    setOrders([...generateOrders('buy', 10), ...generateOrders('sell', 10)]);
+  }, []);
+
   return (
-    <Flex
-      direction="column"
-      width="100%"
-      borderRightWidth={1}
-      borderColor="gray.700"
-    >
-      <Box
-        width="100%"
-        bgColor="gray.800"
-        color="blue.600"
-        fontSize="medium"
-        fontWeight="bold"
-        padding="2"
-      >
-        Order Book
-      </Box>
-
-      <Flex margin="2" fontSize="small" color="gray.300">
-        <Flex flex="1 1 0%" justifyContent="flex-start">
-          Preço(USDT)
-        </Flex>
-        <Flex flex="1 1 0%" justifyContent="flex-end">
-          Quantity(BTC)
-        </Flex>
-        <Flex flex="1 1 0%" justifyContent="flex-end">
-          Total
-        </Flex>
-      </Flex>
-
-      <Flex direction="column" flex="1 1 0%">
-        <OrderLine typeOrder="red" />
-        <Flex paddingX={4} paddingY={1} align="center">
-          <Box display="flex" flex="1 1 0%" fontSize="large" color="green.400">
-            <Text>41,883.09</Text>
-            <Icon as={RiArrowUpLine} fontSize="20" />
-          </Box>
-          <Box flex="1 1 0%" color="gray.300" fontSize="small">
-            $41,907.56
-          </Box>
-        </Flex>
-        <OrderLine typeOrder="green" />
-      </Flex>
-    </Flex>
+    <div className=" mx-auto h-56 relative max-h-56 overflow-scroll .table-container ">
+      <table className="min-w-full bg-gray-500">
+        <thead className='sticky top-0 z-10 bg-gray-500'>
+          <tr className="border-b border-gray-600">
+            <th className="py-2 px-2 text-left text-gray-300 text-xs border-r border-gray-600">Date</th>
+            <th className="py-2 px-2 text-left text-gray-300 text-xs border-r border-gray-600">Type</th>
+            <th className="py-2 px-2 text-left text-gray-300 text-xs border-r border-gray-600">Price</th>
+            <th className="py-2 px-2 text-left text-gray-300 text-xs border-r border-gray-600">Amount</th>
+            <th className="py-2 px-2 text-left text-gray-300 text-xs">Total</th>
+          </tr>
+        </thead>
+        <tbody className=''>
+          {orders.map((order, index) => (
+            <tr key={index} className={`border-b  bg-white even:bg-gray-300 font-bold hover:bg-gray-600 border-gray-600 ${order.type === 'buy' ? 'text-green-500' : 'text-red-500'}`}>
+              <td className="py-1 px-2 text-xs">{order.date.toLocaleString()}</td>
+              <td className="py-1 px-2 text-xs">{order.type.charAt(0).toUpperCase() + order.type.slice(1)}</td>
+              <td className="py-1 px-2 text-xs">${order.price}</td>
+              <td className="py-1 px-2 text-xs">{order.amount}</td>
+              <td className="py-1 px-2 text-xs">${order.total()}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
-}
+};
+
+export default OrderBook;

@@ -1,5 +1,7 @@
 "use client"
+import React from "react"
 import ReactApexChart from 'react-apexcharts';
+
 
 export default function Candlestick(){
     const _state = {
@@ -270,6 +272,28 @@ export default function Candlestick(){
       };
     
     return(
-    <ReactApexChart width={'100%'} height={300} type={'candlestick'} series={_state.series} toolbar={{show:'false'}}  options={_state.options} />
+      <div className="bg-white mb-2">
+            <ReactApexChart width={'100%'} height={300} type={'candlestick'} series={_state.series} toolbar={{tools:{
+      dowload:false
+    }}}  options={{
+      chart: {
+        toolbar:{
+          tools:{
+            download:false
+          }
+        }
+
+      },
+      xaxis: {
+        type: 'datetime'
+      },
+      yaxis: {
+        tooltip: {
+          enabled: true
+        }
+      },
+    }} />
+      </div>
+
     )
 }
